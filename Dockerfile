@@ -1,6 +1,6 @@
 # https://stackoverflow.com/questions/27767264/how-to-dockerize-maven-project-and-how-many-ways-to-accomplish-it
 FROM maven:3.6.0-jdk-11-slim AS build
-RUN CD /root/
+WORKDIR /root/
 RUN git clone https://github.com/tarekkhoury/mywebapplication.git
 RUN mvn -f /root/mywebapplication/pom.xml clean package
 
