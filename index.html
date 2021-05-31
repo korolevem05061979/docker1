@@ -1,7 +1,20 @@
-<html>
-<header><title>Hello World</title></header>
-<body>
-Hello DevOps!
-</body>
-</html>
+docker stop $(docker ps -a -q)
+docker container prune -f
+docker image rm $(docker images -a -q)
+rm -rf docker1
+git clone https://github.com/korolevem05061979/docker1.git
+cd /root/docker1
+docker build -t test1 .
+docker build -t maven .
+docker build -t openjdk .
 
+
+
+docker run -d test1
+docker run -d maven
+docker run -d -p 80:8080 openjdk
+
+
+docker ps -a
+
+cd ..
