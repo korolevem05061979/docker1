@@ -2,7 +2,12 @@
 FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /root/
 RUN apt-get update
-RUN apt-get install git -f
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
+    
+
 RUN git clone https://github.com/tarekkhoury/mywebapplication.git
 RUN mvn -f /root/mywebapplication/pom.xml clean package
 
