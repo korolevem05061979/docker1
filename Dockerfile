@@ -6,8 +6,7 @@
 FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get install git -y
-
-RUN rm -rf /var/www/html/*
+WORKDIR /root/
 RUN git clone https://github.com/tarekkhoury/mywebapplication.git
 CMD /usr/local/bin/shell.sh ; sleep infinity
 
