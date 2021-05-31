@@ -15,7 +15,7 @@ CMD /usr/local/bin/shell.sh ; sleep infinity
 #### maven
 FROM maven:3.6.0-jdk-11-slim AS mavenpmaker
 WORKDIR /root/
-COPY --from=gitfile /root/mywebapplication ./ 
+COPY --from=gitfile /root/mywebapplication /root/mywebapplication/ 
 RUN mvn -f /root/mywebapplication/pom.xml clean package
 CMD /usr/local/bin/shell.sh ; sleep infinity
 
