@@ -24,7 +24,7 @@ CMD /usr/local/bin/shell.sh ; sleep infinity
 
 #### publish 
 FROM tomcat:8.5.43-jdk8 
-COPY --from=mavenpmaker /root/mywebapplication/target/mywebapplication.war /var/lib/tomcat9/webapps/mywebapplication.war
+COPY --from=mavenpmaker /root/mywebapplication/target/mywebapplication.war /usr/local/tomcat/webapps/mywebapplication.war
 EXPOSE 8080
 
 #
