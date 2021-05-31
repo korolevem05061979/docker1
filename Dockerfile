@@ -2,7 +2,7 @@ FROM tomcat:8.5.43-jdk8
 # tomact, default-jdk already installed. We need install maven
 # Downloading and installing Maven
 # 1- Define a constant with the version of maven you want to install
-ARG MAVEN_VERSION=3.6.1         
+ARG MAVEN_VERSION=3.6.3         
 
 # 2- Define a constant with the working directory
 ARG USER_HOME_DIR="/root"
