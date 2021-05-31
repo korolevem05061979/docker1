@@ -1,1 +1,1 @@
-FROM maven/latest
+FROM maven/openjdk
