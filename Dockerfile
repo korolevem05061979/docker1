@@ -24,7 +24,7 @@ CMD /usr/local/bin/shell.sh ; sleep infinity
 
 #### publish 
 FROM openjdk:11-jre-slim
-COPY --from=build /root/mywebapplication/target/mywebapplication.war /var/lib/tomcat9/webapps/mywebapplication.war
+COPY --from=gitfile /root/mywebapplication/target/mywebapplication.war /var/lib/tomcat9/webapps/mywebapplication.war
 EXPOSE 8080
 ENTRYPOINT ["java","-war","/var/lib/tomcat9/webapps/mywebapplication.war"]
 CMD /usr/local/bin/shell.sh ; sleep infinity
