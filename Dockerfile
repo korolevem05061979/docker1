@@ -13,16 +13,11 @@ CMD /usr/local/bin/shell.sh ; sleep infinity
 
 
 #### maven
-#FROM maven:3.6.0-jdk-11-slim AS build
-#WORKDIR /root/
-#RUN apt-get update
-
-#RUN apt-get update && \
-#    apt-get upgrade -y && \
-#    apt-get install -y git
-
-
-#RUN mvn -f /root/mywebapplication/pom.xml clean package
+FROM maven:3.6.0-jdk-11-slim AS mavenpmaker
+WORKDIR /root/
+COPY --from=gitfile /root/mywebapplication ./ 
+RUN mvn -f /root/mywebapplication/pom.xml clean package
+CMD /usr/local/bin/shell.sh ; sleep infinity
 
 
 
