@@ -6,13 +6,13 @@ RUN apt-get update
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
-    
+
 
 RUN git clone https://github.com/tarekkhoury/mywebapplication.git
 RUN mvn -f /root/mywebapplication/pom.xml clean package
 
 #### publish 
-FROM openjdk:11-jre-slim
-COPY --from=build /root/mywebapplication/target/mywebapplication.war /var/lib/tomcat9/webapps/mywebapplication.war
-EXPOSE 8080
-ENTRYPOINT ["java","-war","/var/lib/tomcat9/webapps/mywebapplication.war"]
+### FROM openjdk:11-jre-slim
+### COPY --from=build /root/mywebapplication/target/mywebapplication.war /var/lib/tomcat9/webapps/mywebapplication.war
+### EXPOSE 8080
+### ENTRYPOINT ["java","-war","/var/lib/tomcat9/webapps/mywebapplication.war"]ls
