@@ -3,7 +3,7 @@
 
 ### get file from git
 
-FROM ubuntu:16.04
+FROM ubuntu:16.04 as gitfile
 RUN apt-get update
 RUN apt-get install git -y
 WORKDIR /root/
