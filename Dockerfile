@@ -24,7 +24,7 @@ CMD /usr/local/bin/shell.sh ; sleep infinity
 
 #### publish 
 FROM tomcat:8.5.43-jdk8 
-COPY --from=mavenpmaker /root/App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample.war /usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample.war
+COPY --from=mavenpmaker /root/App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war
 EXPOSE 8080
 
 #
